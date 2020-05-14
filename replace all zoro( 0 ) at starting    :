@@ -1,0 +1,65 @@
+package binaryTreeImplement;
+
+import java.util.Scanner;
+
+class ArrayImpl
+{
+    Scanner sc=new Scanner(System.in);
+    int[] arr;
+    public ArrayImpl(int size)
+    {
+        arr=new int[size];
+    }
+    public void inserVal()
+    {
+        System.out.println(" enter " + arr.length+ "   value for arrasy  :");
+        for (int i = 0; i < arr.length; i++)
+        {
+        arr[i]=sc.nextInt();
+        }
+    }
+    public void distinct()
+    {
+        for (int i = 0; i <arr.length ; i++)
+        {
+            int j=i;
+        if(arr[i]!=0)
+        {
+            while (arr[j] != 0&&j<arr.length-1)
+            {
+                j++;
+
+            }
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+        }
+    }
+    public void display()
+    {
+        for (int i = 0; i <arr.length ; i++)
+        {
+
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+public class BSTmain
+{
+    public static void main(String... PankajSharma)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter size of arrays : ");
+        int size =sc.nextByte();
+        ArrayImpl obj=new ArrayImpl(size);
+        obj.inserVal();
+        System.out.println("arrays before implement : \n");
+        obj.display();
+        System.out.println("\n arrays after implemet \n ");
+        obj.distinct();
+        obj.display();
+
+        System.out.println("Pankaj Sharma :");
+    }
+}
